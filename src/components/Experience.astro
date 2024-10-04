@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "2023 - Actualmente...",
+    title: "AENIMA AGENCY",
+    subtitle: "Desarrollador Frontend",
+    description:
+      "Desarrollo de sitios web y aplicaciones web para diferentes clientes como tambien el mantenimiento de las mismas y la gestion de los servicios.",
+    link: "https://aenima.agency/",
+  },
+  {
+    date: "2022 - Actualmente...",
+    title: "FREELANCE",
+    subtitle: "Desarrollador Frontend",
+    description:
+      "Durante mis inicios en el mundo de la programación web, me dediqué a desarrollar sitios web y aplicaciones web como proyectos personales para el desarollo y aprendizaje de mis habilidades.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+  {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
+</ol>
