@@ -18,7 +18,7 @@ import ProjectsIco from "../icons/ProjectsIcon.astro";
   title="Porfolio Luciano Napolitano - Desarollador y Programador Web"
   description="Contrata a Luciano Napolitano para desarrollar tu sitio web o aplicación web."
 >
-  <main class="px-10 pl-14">
+  <main class="px-5">
     <SectionContainer class="md:py-20 py-10">
       <div class="flex items-center gap-4">
         <img
@@ -35,7 +35,7 @@ import ProjectsIco from "../icons/ProjectsIcon.astro";
       <h1 class="welcome text-4xl md:text-5xl font-bold py-4">
         Hola! Soy Luciano
       </h1>
-      <h2 class="sm:text-2xl text-lg pb-4 text-pretty">
+      <h2 class="sm:text-xl text-lg pb-4 text-pretty">
         Experiencia en diferentes tecnologías web.
         <span class="text-cyan-500 font-bold font-nothing"
           >PROGRAMADOR y DESAROLLADOR
@@ -54,19 +54,13 @@ import ProjectsIco from "../icons/ProjectsIcon.astro";
         <li>
           <SocialPill href="https://www.linkedin.com/in/luciano-napolitano/">
             <LinkedInIcon />
-            <p class="sm:text-sm text-sm">LinkedIn</p>
-          </SocialPill>
-        </li>
-        <li>
-          <SocialPill href="https://github.com/LuchoNapo">
-            <GItHubIcon />
-            <p class="sm:text-sm text-sm">GitHub</p>
+            <p class="text-sm">LinkedIn</p>
           </SocialPill>
         </li>
         <li>
           <SocialPill href="mailto:luciano_napo@hotmail.com;">
             <MailIcon />
-            <p class="sm:text-sm text-sm">Mail</p>
+            <p class="text-sm">Mail</p>
           </SocialPill>
         </li>
         <li>
@@ -74,12 +68,12 @@ import ProjectsIco from "../icons/ProjectsIcon.astro";
             href="https://wa.me/542615055103?text=Hola%2C%20me%20comunico%20desde%20tu%20porfolio"
           >
             <WppIcon />
-            <p class="sm:text-sm text-sm">WhatsApp</p>
+            <p class="text-sm">WhatsApp</p>
           </SocialPill>
         </li>
       </ul>
     </SectionContainer>
-    <SectionContainer id="experience">
+    <SectionContainer id="experience" class="md:pb-20 pb-10">
       <h2 class="text-2xl font-bold mb-5 flex items-center gap-2">
         <ExperienceIcon />
         Mi experiencia
@@ -91,7 +85,7 @@ import ProjectsIco from "../icons/ProjectsIcon.astro";
         <ProjectsIco />
         Mis proyectos
       </h2>
-      <div class="flex w-full flex-wrap gap-10">
+      <div class="md:grid md:grid-cols-2 flex flex-col w-full gap-10">
         <Projects />
       </div>
     </SectionContainer>
@@ -100,23 +94,7 @@ import ProjectsIco from "../icons/ProjectsIcon.astro";
 
 <style>
   .welcome {
-    width: 15.8ch;
     white-space: nowrap;
-    border-right: 4px solid;
-    animation:
-      typing 1.5s steps(18),
-      blink 0.5s infinite step-end alternate;
     overflow: hidden;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-  }
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
   }
 </style>

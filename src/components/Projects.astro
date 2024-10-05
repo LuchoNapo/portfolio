@@ -53,9 +53,9 @@ const TAGS = {
 
 const PROJECTS = [
   {
-    title: "Icaro 23 - Fabbri",
+    title: "Icaro 23",
     description:
-      "Web desarrollada para Fabbri Desarrollos, donde se presenta el fideicomiso Ícaro 23. La página ofrece una visión clara de las especificaciones del proyecto, plantas arquitectónicas y todos los detalles relevantes para los interesados en esta propuesta inmobiliaria.",
+      "Web desarrollada para Fabbri Desarrollos, donde se presenta el fideicomiso Ícaro 23 y todas sus caracteristicas y especificaciones. ",
     link: "https://aenimalab.com.ar/fabbri-2024/Icaro23",
     gitub: "",
     image: "./images/projects/Icaro23Project.webp",
@@ -64,16 +64,16 @@ const PROJECTS = [
   {
     title: "Web Institucional Fabbri",
     description:
-      "Sitio web desarrollado para Fabbri Desarrollos, donde se exponen los diferentes proyectos inmobiliarios de la empresa. La página ofrece información detallada sobre cada desarrollo, incluyendo especificaciones, avances y características de los fideicomisos, brindando a los usuarios una visión completa de las propuestas actuales.",
+      "Sitio web desarrollado para Fabbri Desarrollos, donde se exponen los diferentes proyectos inmobiliarios de la empresa. ",
     link: "https://aenimalab.com.ar/fabbri-2024/",
     gitub: "",
     image: "./images/projects/FabbriProject.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.PHP, TAGS.JavaScrit, TAGS.Sass],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.PHP, TAGS.JavaScrit],
   },
   {
     title: "Rick & Morty APP",
     description:
-      "Aplicación desarrollada con la API de Rick and Morty, que permite explorar y visualizar información detallada sobre los personajes de la serie. Los usuarios pueden buscar personajes, ver sus características y filtrar resultados de manera sencilla a través de una interfaz intuitiva.",
+      "Aplicación desarrollada con la API de Rick and Morty, que permite explorar y visualizar información detallada sobre los personajes de la serie.",
     link: "https://aenimalab.com.ar/fabbri-2024/",
     gitub: "https://github.com/LuchoNapo/Rick-And-Morty-APP",
     image: "./images/projects/RickAndMortyProject.webp",
@@ -82,8 +82,7 @@ const PROJECTS = [
   {
     title: "Mantenimiento Wordpress",
     description:
-      "Sitio web de Akapol desarrollado en WordPress, al que realicé tareas de mantenimiento para optimizar su funcionamiento y asegurar su rendimiento. La página presenta la oferta de productos de la empresa de manera clara y accesible, brindando una experiencia de usuario eficiente.",
-    link: "https://aenimalab.com.ar/fabbri-2024/",
+      "Sitio web de Akapol desarrollado en WordPress, al que realicé tareas de mantenimiento para optimizar su funcionamiento y asegurar su rendimiento.",
     gitub: "",
     image: "./images/projects/AkapolProject.webp",
     tags: [TAGS.Wordpress],
@@ -93,15 +92,15 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, image }) => (
-    <article class="ml-3 ">
+    <article class="">
       <div>
         <h3 class="text-2xl mb-2 text-cyan-500 font-semibold">{title}</h3>
-        <p class="text-lg">{description}</p>
+        <p class="text-md text-balance">{description}</p>
         <ul class="flex my-4 gap-2">
           {tags.map((tag) => (
             <li>
               <span
-                class={`${tag.class} flex items-center justify-center py-1 px-2 rounded-full gap-x-2 text-xs`}
+                class={`${tag.class} flex items-center justify-center py-1 px-2 rounded-full gap-x-2 text-xs dark:shadow-white/100 `}
               >
                 <tag.icon class="size-5" />
                 {tag.name}
