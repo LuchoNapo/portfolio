@@ -92,9 +92,9 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, image }) => (
-    <article class="flex gap-6 items-center justify-start">
+    <article class="flex gap-6 items-center justify-start md:flex-row flex-col">
       <img
-        class="size-7/12 rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5 "
+        class="md:size-7/12 rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5 "
         src={image}
         alt={`Captura de pantallade del proyecto ${title}`}
       />
