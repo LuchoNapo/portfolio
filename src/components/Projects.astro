@@ -82,7 +82,7 @@ const PROJECTS = [
   {
     title: "Mantenimiento Wordpress",
     description:
-      "Sitio web de Akapol desarrollado en WordPress, al que realicé tareas de mantenimiento para optimizar su funcionamiento y asegurar su rendimiento.",
+      "Sitio web de Akapol desarrollado en WordPress, al que realizo tareas de mantenimiento para optimizar su funcionamiento y asegurar su rendimiento.",
     gitub: "",
     image: "./images/projects/AkapolProject.webp",
     tags: [TAGS.Wordpress],
@@ -92,10 +92,15 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, image }) => (
-    <article class="">
+    <article class="flex gap-6 items-center justify-start">
+      <img
+        class="size-7/12 rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5 "
+        src={image}
+        alt={`Captura de pantallade del proyecto ${title}`}
+      />
       <div>
         <h3 class="text-2xl mb-2 text-cyan-500 font-semibold">{title}</h3>
-        <p class="text-md text-balance">{description}</p>
+        <p class="text-md text-pretty">{description}</p>
         <ul class="flex my-4 gap-2">
           {tags.map((tag) => (
             <li>
@@ -109,11 +114,6 @@ const PROJECTS = [
           ))}
         </ul>
       </div>
-      <img
-        class="rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5"
-        src={image}
-        alt={`Captura de pantallade del proyecto ${title}`}
-      />
     </article>
   ))
 }
