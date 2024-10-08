@@ -1,93 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
+
 import "@fontsource/nothing-you-could-do";
 import SectionContainer from "../components/SectionContainer.astro";
-import SocialPill from "../icons/SocialPill.astro";
-import LinkedInIcon from "../icons/LinkedInIcon.astro";
-import GItHubIcon from "../icons/GitHubIcon.astro";
-import MailIcon from "../icons/MailIcon.astro";
-import WppIcon from "../icons/WppIcon.astro";
+import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceIcon from "../icons/ExperienceIcon.astro";
 import Projects from "../components/Projects.astro";
 import ProjectsIco from "../icons/ProjectsIcon.astro";
+import About from "../components/About.astro";
+import AboutIcon from "../icons/AboutIcon.astro";
 ---
 
 <Layout
   title="Porfolio Luciano Napolitano - Desarollador y Programador Web"
   description="Contrata a Luciano Napolitano para desarrollar tu sitio web o aplicación web."
 >
-  <main class="px-5">
-    <SectionContainer class="md:py-20 py-10">
-      <div class="flex items-center gap-4">
-        <img
-          class="size-16 rounded-full"
-          src="/images/yo.webp"
-          alt="yo-photo"
-        /><a
-          href="https://www.linkedin.com/in/luciano-napolitano/"
-          target="_blank"
-          rel="noopener"
-          style="display: flex;"><Badge>Web Developer</Badge></a
-        >
-      </div>
-      <h1 class="welcome text-4xl md:text-5xl font-bold py-4">
-        Hola! Soy Luciano
-      </h1>
-      <h2 class="sm:text-xl text-lg pb-4 text-pretty">
-        Experiencia en diferentes tecnologías web.
-        <span class="text-cyan-500 font-bold font-nothing"
-          >PROGRAMADOR y DESAROLLADOR
-        </span>especializado en diferentes tecnologias. Actualmente trabajando
-        como desarrollador<span class="text-cyan-500 font-bold font-nothing">
-          FRONTEND</span
-        > en <a
-          class="italic"
-          href="https://aenima.agency/"
-          target="_blank"
-          rel="noopener">Aenima</a
-        >
-        💡
-      </h2>
-      <ul class="flex sm:gap-4 gap-2 items-center">
-        <li>
-          <SocialPill href="https://www.linkedin.com/in/luciano-napolitano/">
-            <LinkedInIcon />
-            <p class="text-sm">LinkedIn</p>
-          </SocialPill>
-        </li>
-        <li>
-          <SocialPill href="mailto:luciano_napo@hotmail.com;">
-            <MailIcon />
-            <p class="text-sm">Mail</p>
-          </SocialPill>
-        </li>
-        <li>
-          <SocialPill
-            href="https://wa.me/542615055103?text=Hola%2C%20me%20comunico%20desde%20tu%20porfolio"
-          >
-            <WppIcon />
-            <p class="text-sm">WhatsApp</p>
-          </SocialPill>
-        </li>
-      </ul>
+  <main>
+    <SectionContainer
+      class="min-h-[90dvh] w-svw flex flex-col items-center justify-center bg-[url('/images/hero-bg.webp')] md:bg-fixed bg-cover md:bg-bottom bg-[center_top_10px]"
+    >
+      <Hero />
     </SectionContainer>
-    <SectionContainer id="experience" class="md:pb-20 pb-10">
-      <h2 class="text-2xl font-bold mb-5 flex items-center gap-2">
+    <SectionContainer
+      id="experience"
+      class="hola md:py-10 py-8 md:w-[740px] w-full px-5"
+    >
+      <h2
+        class="md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2 animate-fadeUp opacity-0"
+      >
         <ExperienceIcon />
-        Mi experiencia
+        Experiencia
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer id="projects">
-      <h2 class="text-2xl font-bold mb-5 flex items-center gap-2">
+    <SectionContainer id="projects" class="w-full py-20">
+      <h2
+        class="md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
+      >
         <ProjectsIco />
-        Mis proyectos
+        Proyectos
       </h2>
-      <div class="flex flex-col w-full gap-10">
+      <div
+        class="xl:w-[1320px] w-full mx-auto flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 px-5 md:px-10"
+      >
         <Projects />
       </div>
     </SectionContainer>
+    <SectionContainer
+      id="contact"
+      class="md:py-10 py-8 xl:w-[1320px] w-full px-5"
+    >
+      <h2 class="md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2">
+        <AboutIcon />
+        Sobre mí
+      </h2>
+      <About />
+    </SectionContainer>
   </main>
 </Layout>
+<style>
+  h2 {
+    animation-delay: 500ms;
+  }
+</style>

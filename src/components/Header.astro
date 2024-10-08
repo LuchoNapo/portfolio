@@ -1,9 +1,27 @@
 <header>
-    <nav class="flex justify-center items-center gap-3 sm:gap-7 p-5 text-sm sm:text-base">
-        <a href="#experience">Experiencia</a>
-        <a href="#about">Sobre mí</a>  
-        <a href="#projects">Proyectos</a>
-        <a href="#contact">Contacto</a>
-    </nav>
+  <nav
+    class="flex justify-center items-center gap-3 sm:gap-7 p-3 px-4 text-sm sm:text-base fixed rounded-full mt-3 top-0 left-2/4 -translate-x-1/2 z-50 text-nowrap"
+  >
+    <a href="#experience">Experiencia</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#about">Sobre mí</a>
+    <a href="#contact">Contacto</a>
+  </nav>
 </header>
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
 
+  nav {
+    @apply bg-slate-200/10 shadow-lg ring-1 backdrop-blur ring-white/10;
+  }
+  a {
+    transition: all 0.3s ease-in-out;
+  }
+  a:hover {
+    transform: scale(1.1);
+  }
+</style>

@@ -7,6 +7,9 @@ import SassIcon from "../icons/SassIcon.astro";
 import ViteIcon from "../icons/ViteIcon.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import WordpressIcon from "../icons/WordpressIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
 
 const TAGS = {
   HTML: {
@@ -56,8 +59,7 @@ const PROJECTS = [
     title: "Icaro 23",
     description:
       "Web desarrollada para Fabbri Desarrollos, donde se presenta el fideicomiso Ícaro 23 y todas sus caracteristicas y especificaciones. ",
-    link: "https://aenimalab.com.ar/fabbri-2024/Icaro23",
-    gitub: "",
+    link: "https://aenimalab.com.ar/fabbri-2024/icaro23/",
     image: "./images/projects/Icaro23Project.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScrit, TAGS.PHP],
   },
@@ -66,7 +68,6 @@ const PROJECTS = [
     description:
       "Sitio web desarrollado para Fabbri Desarrollos, donde se exponen los diferentes proyectos inmobiliarios de la empresa. ",
     link: "https://aenimalab.com.ar/fabbri-2024/",
-    gitub: "",
     image: "./images/projects/FabbriProject.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.PHP, TAGS.JavaScrit],
   },
@@ -74,8 +75,7 @@ const PROJECTS = [
     title: "Rick & Morty APP",
     description:
       "Aplicación desarrollada con la API de Rick and Morty, que permite explorar y visualizar información detallada sobre los personajes de la serie.",
-    link: "https://aenimalab.com.ar/fabbri-2024/",
-    gitub: "https://github.com/LuchoNapo/Rick-And-Morty-APP",
+    github: "https://github.com/LuchoNapo/Rick-And-Morty-APP",
     image: "./images/projects/RickAndMortyProject.webp",
     tags: [TAGS.React, TAGS.Vite, TAGS.Sass, TAGS.CSS],
   },
@@ -83,7 +83,7 @@ const PROJECTS = [
     title: "Mantenimiento Wordpress",
     description:
       "Sitio web de Akapol desarrollado en WordPress, al que realizo tareas de mantenimiento para optimizar su funcionamiento y asegurar su rendimiento.",
-    gitub: "",
+    link: "https://akapol.com/",
     image: "./images/projects/AkapolProject.webp",
     tags: [TAGS.Wordpress],
   },
@@ -91,21 +91,22 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map(({ title, description, tags, image }) => (
-    <article class="flex gap-6 items-center justify-start md:flex-row flex-col">
+  PROJECTS.map(({ title, description, tags, image, link, github }) => (
+    <article data-aos="zoom-in-up">
       <img
-        class="md:size-7/12 rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5 "
+        class="rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5"
         src={image}
-        alt={`Captura de pantallade del proyecto ${title}`}
+        alt={`Captura de pantalla del proyecto ${title}`}
       />
-      <div>
-        <h3 class="text-2xl mb-2 text-cyan-500 font-semibold">{title}</h3>
-        <p class="text-md text-pretty">{description}</p>
-        <ul class="flex my-4 gap-2">
+
+      <h3 class="text-2xl mb-2 text-cyan-500 font-semibold">{title}</h3>
+      <p class="text-md text-pretty">{description}</p>
+      <div class="flex items-center justify-between flex-col sm:flex-row">
+        <ul class="flex my-4 gap-2 items-center">
           {tags.map((tag) => (
             <li>
               <span
-                class={`${tag.class} flex items-center justify-center py-1 px-2 rounded-full gap-x-2 text-xs dark:shadow-white/100 `}
+                class={`${tag.class} flex items-center justify-center py-1 px-2 rounded-full gap-x-2 text-xs dark:shadow-white/100`}
               >
                 <tag.icon class="size-5" />
                 {tag.name}
@@ -113,6 +114,27 @@ const PROJECTS = [
             </li>
           ))}
         </ul>
+        {github ? (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener"
+            class="sm:mb-5 cursor-pointer flex items-center gap-1 text-sm xl:text-base xl:py-2 xl:px-3 py-1 px-2 bg-slate-600/10 rounded-lg mx-8 hover:bg-slate-600 transition-color duration-300"
+          >
+            <GitHubIcon />
+            Preview
+          </a>
+        ) : (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener"
+            class="sm:mb-0 mb-5 cursor-pointer flex items-center gap-1 text-sm xl:text-base xl:py-2 xl:px-3 py-1 px-2 bg-slate-600/10 rounded-lg mx-8 hover:bg-slate-600 transition-color duration-300"
+          >
+            <LinkIcon />
+            Preview
+          </a>
+        )}
       </div>
     </article>
   ))

@@ -1,5 +1,23 @@
 <span
-  class="bg-cyan-200 text-black-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-cyan-500 dark:text-white"
+  class="badge bg-cyan-200 text-black-800 text-xs font-medium me-2 px-3 py-1 rounded-xl dark:bg-cyan-500 dark:text-white"
 >
   <slot />
 </span>
+<style>
+  .badge {
+    animation: myAnim 5s ease 0s normal forwards infinite;
+  }
+
+  @keyframes myAnim {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+
+    25%,
+    75% {
+      opacity: .3;
+    }
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+import Badge from "./Badge.astro";
 const EXPERIENCE = [
   {
     date: "2023 - Actualmente...",
@@ -8,6 +9,7 @@ const EXPERIENCE = [
     description:
       "Desarrollo de sitios web y aplicaciones web para diferentes clientes como tambien el mantenimiento de las mismas y la gestion de los servicios.",
     link: "https://aenima.agency/",
+    badge: "Now"
   },
   {
     date: "2022 - Actualmente...",
@@ -19,6 +21,6 @@ const EXPERIENCE = [
 ];
 ---
 
-<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+<ol class="relative border-s-4 border-gray-200 dark:border-gray-700 ml-3 mt-10 pt-1">
   {EXPERIENCE.map((experience) => <ExperienceItem {...experience} />)}
 </ol>

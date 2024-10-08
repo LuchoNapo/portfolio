@@ -20,12 +20,7 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="relative text-black dark:text-white">
-    <div
-      style="z-index: -2;"
-      class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"
-    >
-    </div>
+  <body class="relative text-white bg-neutral-900">
     <Header />
     <slot />
     <Footer />
@@ -46,11 +41,20 @@ const { title, description } = Astro.props;
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden;
-
   }
-  @media (prefers-reduced-motions){
-    html{
+  @media (prefers-reduced-motions) {
+    html {
       scroll-behavior: auto;
     }
   }
 </style>
+<script>
+  import AOS from "aos";
+  import "aos/dist/aos.css";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
+</script>

@@ -1,0 +1,81 @@
+---
+import SocialPill from "../icons/SocialPill.astro";
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import MailIcon from "../icons/MailIcon.astro";
+import WppIcon from "../icons/WppIcon.astro";
+---
+
+<img
+  class="size-32 mb-5 rounded-full animate-fadeUp"
+  src="/images/yo.webp"
+  alt="yo-photo"
+/>
+<div class="inline-block">
+  <h3 class="welcome text-2xl md:text-3xl font-bold">Hola! Soy Luciano</h3>
+</div>
+<h1 class="md:text-8xl text-5xl font-bold animate-fadeUp">FrontEnd</h1>
+<h3 class="md:text-5xl text-3xl pb-4 animate-fadeUp delay-200">Developer</h3>
+
+<ul class="flex sm:gap-4 gap-2 items-center">
+  <li>
+    <SocialPill href="https://www.linkedin.com/in/luciano-napolitano/">
+      <LinkedInIcon />
+      <p class="text-sm">LinkedIn</p>
+    </SocialPill>
+  </li>
+  <li>
+    <SocialPill href="mailto:luciano_napo@hotmail.com;">
+      <MailIcon />
+      <p class="text-sm">Mail</p>
+    </SocialPill>
+  </li>
+  <li>
+    <SocialPill
+      href="https://wa.me/542615055103?text=Hola%2C%20me%20comunico%20desde%20tu%20porfolio"
+    >
+      <WppIcon />
+      <p class="text-sm">WhatsApp</p>
+    </SocialPill>
+  </li>
+</ul>
+<style>
+  .welcome {
+    width: 100%;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+      typing 1.5s steps(17) forwards,
+      blink 1s infinite 1.5s,
+      hideBorder 0s forwards 4s;
+  }
+
+  h3 {
+    animation-delay: 200ms;
+    text-shadow: 1px 1px 1px #000;
+  }
+  h2 {
+    text-shadow: 5px 5px 5px #000;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%; 
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes hideBorder {
+    to {
+      border-right: none; 
+    }
+  }
+</style>
