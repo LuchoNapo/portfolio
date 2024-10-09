@@ -1,4 +1,5 @@
 # Portfolio: Luciano Napolitano
 
-![image](https://github.com/user-attachments/assets/cce3fa28-d5fb-4b05-9f1c-002443baf3f2)
+![image](https://github.com/user-attachments/assets/d8333072-e8a7-4e33-84d2-3376b8cb0f86)
+
 
