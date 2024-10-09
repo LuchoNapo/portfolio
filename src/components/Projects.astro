@@ -8,7 +8,6 @@ import ViteIcon from "../icons/ViteIcon.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import WordpressIcon from "../icons/WordpressIcon.astro";
 import LinkIcon from "../icons/LinkIcon.astro";
-import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 
 const TAGS = {
@@ -92,15 +91,15 @@ const PROJECTS = [
 
 {
   PROJECTS.map(({ title, description, tags, image, link, github }) => (
-    <article data-aos="zoom-in-up">
+    <article class="xs:w-full w-3/4" data-aos="zoom-in-up">
       <img
         class="rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5"
         src={image}
         alt={`Captura de pantalla del proyecto ${title}`}
       />
 
-      <h3 class="text-2xl mb-2 text-cyan-500 font-semibold">{title}</h3>
-      <p class="text-md text-pretty">{description}</p>
+      <h3 class="text-2xl mb-2 text-cyan-500 font-semibold sm:text-left text-center">{title}</h3>
+      <p class="text-md text-pretty sm:text-left text-center">{description}</p>
       <div class="flex items-center justify-between flex-col sm:flex-row">
         <ul class="flex my-4 gap-2 items-center">
           {tags.map((tag) => (
