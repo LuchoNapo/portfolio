@@ -10,6 +10,8 @@ import Projects from "../components/Projects.astro";
 import ProjectsIco from "../icons/ProjectsIcon.astro";
 import About from "../components/About.astro";
 import AboutIcon from "../icons/AboutIcon.astro";
+import CodeIcon from "../icons/CodeIcon.astro";
+import Tecnologias from "../components/Tecnologias.astro";
 ---
 
 <Layout
@@ -34,21 +36,32 @@ import AboutIcon from "../icons/AboutIcon.astro";
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer id="projects" class="w-full py-20 flex flex-col items-center">
+    <SectionContainer class="w-full flex flex-col items-center">
+      <h2
+        class="md:text-4xl text-2xl font-bold m-10 px-5 flex items-center gap-2 md:justify-center"
+      >
+        <CodeIcon />
+        Tecnologías
+      </h2>
+      <Tecnologias />
+    </SectionContainer>
+    <SectionContainer
+      id="projects"
+      class="w-full py-20 flex flex-col items-center"
+    >
       <h2
         class="md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
       >
         <ProjectsIco />
         Proyectos
       </h2>
-      <div class="lg:grid lg:grid-cols-2 lg:justify-items-center flex flex-col items-center xs:mx-5 md:gap-10 sm:mx-20 2xl:w-[1280px]">
+      <div
+        class="lg:grid lg:grid-cols-2 lg:justify-items-center flex flex-col items-center xs:mx-5 md:gap-10 sm:mx-20 2xl:w-[1280px]"
+      >
         <Projects />
       </div>
     </SectionContainer>
-    <SectionContainer
-      id="about"
-      class="flex items-center flex-col"
-    >
+    <SectionContainer id="about" class="flex items-center flex-col">
       <h2 class="md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2">
         <AboutIcon />
         Sobre mí

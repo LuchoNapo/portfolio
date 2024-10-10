@@ -1,0 +1,77 @@
+---
+import CSSIcon from "../icons/CSSIcon.astro";
+import HTMLIcon from "../icons/HTMLIcon.astro";
+import JavaScriptIcon from "../icons/JavaScriptIcon.astro";
+import PHPIcon from "../icons/PHPIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+import TailwindIcon from "../icons/TailwindIcon.astro";
+import WordpressIcon from "../icons/WordpressIcon.astro";
+import ViteIcon from "../icons/ViteIcon.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import GitIcon from "../icons/GitIcon.astro";
+import NextIcon from "../icons/NextIcon.astro";
+import TypeScriptIcon from "../icons/TypeScriptIcon.astro"
+import BootstrapIcon from "../icons/BootstrapIcon.astro"
+---
+<article class="w-[80vw] xl:w-[50vw] flex flex-col items-center justify-center text-pretty m-auto">
+  <h3 class="text-center w-full md:w-4/6 md:text-lg mb-4">Experiencia en el manejo de distinas tecnologías que he utilizado en mi trabajo y en mi proyectos personales y de los cuales sigo aprendiendo y mejorando constantemente.</h3>
+  <div class="logos w-full m-auto flex overflow-hidden">
+    <div class="logos-slide">
+      <div class="slide"><HTMLIcon class="size-16 sm:size-24" />HTML</div>
+      <div class="slide"><CSSIcon class="size-16 sm:size-24" />CSS</div>
+      <div class="slide"><JavaScriptIcon class="size-16 sm:size-24" />JavaScript</div>
+      <div class="slide"><TypeScriptIcon class="size-16 sm:size-24"/>TypeScript</div>
+      <div class="slide"><TailwindIcon class="size-16 sm:size-24" />Tailwind</div>
+      <div class="slide"><BootstrapIcon class="size-16 sm:size-24"/>Bootstrap</div>
+      <div class="slide"><ReactIcon class="size-16 sm:size-24" />React</div>
+      <div class="slide"><PHPIcon class="size-16 sm:size-24" />PHP</div>
+      <div class="slide"><ViteIcon class="size-16 sm:size-24" />Vite</div>
+      <div class="slide"><WordpressIcon class="size-16 sm:size-24" />Wordpress</div>
+      <div class="slide"><AstroIcon class="size-16 sm:size-24" />Astro</div>
+      <div class="slide"><GitHubIcon class="size-16 sm:size-24" />GitHub</div>
+      <div class="slide"><GitIcon class="size-16 sm:size-24" />Git</div>
+      <div class="slide"><NextIcon class="size-16 sm:size-24" />Next</div>
+  
+      <div class="slide"><HTMLIcon class="size-16 sm:size-24" />HTML</div>
+      <div class="slide"><CSSIcon class="size-16 sm:size-24" />CSS</div>
+      <div class="slide"><JavaScriptIcon class="size-16 sm:size-24" />JavaScript</div>
+      <div class="slide"><TypeScriptIcon class="size-16 sm:size-24"/>TypeScript</div>
+      <div class="slide"><TailwindIcon class="size-16 sm:size-24" />Tailwind</div>
+      <div class="slide"><BootstrapIcon class="size-16 sm:size-24"/>Bootstrap</div>
+      <div class="slide"><ReactIcon class="size-16 sm:size-24" />React</div>
+      <div class="slide"><PHPIcon class="size-16 sm:size-24" />PHP</div>
+      <div class="slide"><ViteIcon class="size-16 sm:size-24" />Vite</div>
+      <div class="slide"><WordpressIcon class="size-16 sm:size-24" />Wordpress</div>
+      <div class="slide"><AstroIcon class="size-16 sm:size-24" />Astro</div>
+      <div class="slide"><GitHubIcon class="size-16 sm:size-24" />GitHub</div>
+      <div class="slide"><GitIcon class="size-16 sm:size-24" />Git</div>
+      <div class="slide"><NextIcon class="size-16 sm:size-24" />Next</div>
+    </div>
+  </div>
+</article>
+
+
+<style>
+  .logos-slide {
+    display: flex;
+    animation: scroll 10s linear infinite;
+    width: max-content;
+  }
+  .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
