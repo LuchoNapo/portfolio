@@ -2,15 +2,14 @@
 const { class: className, id, title, icon: Icon } = Astro.props;
 ---
 
-<section
-  id={id}
-  class={`${className} w-full mx-auto flex flex-col`}
->
-  {title && (
-    <h2 class="w-mc before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2">
-       <Icon />
-      {title}
-    </h2>
-  )}
+<section id={id} class={`${className} w-full mx-auto flex flex-col`}>
+  {
+    title && (
+      <h2 class="w-mc before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2">
+        <Icon />
+        {title}
+      </h2>
+    )
+  }
   <slot />
 </section>
