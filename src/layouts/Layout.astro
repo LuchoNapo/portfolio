@@ -42,6 +42,10 @@ const { title, description } = Astro.props;
     min-height: 100dvh;
     overflow-x: hidden;
   }
+  *::selection {
+    background-color: #0e7490b7;
+    color: black;;
+  }
   @media (prefers-reduced-motions) {
     html {
       scroll-behavior: auto;

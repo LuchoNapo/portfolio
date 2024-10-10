@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
 import "@fontsource/nothing-you-could-do";
 import SectionContainer from "../components/SectionContainer.astro";
 import Hero from "../components/Hero.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceIcon from "../icons/ExperienceIcon.astro";
 import Projects from "../components/Projects.astro";
-import ProjectsIco from "../icons/ProjectsIcon.astro";
+import ProjectsIcon from "../icons/ProjectsIcon.astro"; // Corrige el nombre del icono si es necesario
 import About from "../components/About.astro";
 import AboutIcon from "../icons/AboutIcon.astro";
 import CodeIcon from "../icons/CodeIcon.astro";
@@ -15,7 +14,7 @@ import Tecnologias from "../components/Tecnologias.astro";
 ---
 
 <Layout
-  title="Porfolio Luciano Napolitano - Desarollador y Programador Web"
+  title="Portfolio Luciano Napolitano - Desarrollador y Programador Web"
   description="Contrata a Luciano Napolitano para desarrollar tu sitio web o aplicación web."
 >
   <main>
@@ -24,50 +23,49 @@ import Tecnologias from "../components/Tecnologias.astro";
     >
       <Hero />
     </SectionContainer>
+
     <SectionContainer
       id="experience"
+      title="Experiencia"
+      icon={ExperienceIcon}
       class="md:py-10 py-8 md:w-[740px] w-full px-5"
     >
-      <h2
-        class="w-mc before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2 animate-fadeUp opacity-0"
-      >
-        <ExperienceIcon />
-        Experiencia
-      </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer class="flex flex-col items-center">
-      <h2
-        class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
-      >
-        <CodeIcon />
-        Tecnologías
-      </h2>
+
+    <SectionContainer
+      id="tecnologias"
+      title="Tecnologías"
+      icon={CodeIcon}
+      class="flex flex-col items-center"
+    >
       <Tecnologias />
     </SectionContainer>
-    <SectionContainer id="projects" class="py-20 flex flex-col items-center">
-      <h2
-      class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
-      >
-        <ProjectsIco />
-        Proyectos
-      </h2>
+
+    <SectionContainer
+      id="projects"
+      title="Proyectos"
+      icon={ProjectsIcon}
+      class="py-20 flex flex-col items-center"
+    >
       <div
         class="lg:grid lg:grid-cols-2 lg:justify-items-center flex flex-col items-center xs:mx-5 md:gap-10 sm:mx-20 2xl:w-[1280px]"
       >
         <Projects />
       </div>
     </SectionContainer>
-    <SectionContainer id="about" class="flex items-center flex-col">
-      <h2         class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
-      >
-        <AboutIcon />
-        Sobre mí
-      </h2>
+
+    <SectionContainer
+      id="about"
+      title="Sobre mí"
+      icon={AboutIcon}
+      class="flex items-center flex-col"
+    >
       <About />
     </SectionContainer>
   </main>
 </Layout>
+
 <style>
   h2 {
     animation-delay: 500ms;
