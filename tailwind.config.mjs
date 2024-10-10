@@ -5,9 +5,12 @@ export default {
 		extend: {
 			screens: {
 				'xs': '375px',
-			  },
+			},
 			fontFamily: {
 				'nothing': ['"Nothing You Could Do"', 'cursive'],
+			},
+			width: {
+				'mc': 'max-content',
 			},
 			keyframes: {
 				fadeUp: {

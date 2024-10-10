@@ -20,37 +20,34 @@ import Tecnologias from "../components/Tecnologias.astro";
 >
   <main>
     <SectionContainer
-      class="min-h-[100vh] sm:min-h-[90vh] py-20 w-svw flex flex-col items-center justify-center bg-[url('/images/hero-bg.webp')] md:bg-fixed bg-cover md:bg-bottom bg-[center_top]"
+      class="min-h-[100vh] sm:min-h-[90vh] py-20 w-svw bg-[url('/images/hero-bg.webp')] md:bg-fixed bg-cover md:bg-bottom bg-[center_top] items-center justify-center"
     >
       <Hero />
     </SectionContainer>
     <SectionContainer
       id="experience"
-      class="hola md:py-10 py-8 md:w-[740px] w-full px-5"
+      class="md:py-10 py-8 md:w-[740px] w-full px-5"
     >
       <h2
-        class="md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2 animate-fadeUp opacity-0"
+        class="w-mc before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2 animate-fadeUp opacity-0"
       >
         <ExperienceIcon />
         Experiencia
       </h2>
       <Experience />
     </SectionContainer>
-    <SectionContainer class="w-full flex flex-col items-center">
+    <SectionContainer class="flex flex-col items-center">
       <h2
-        class="md:text-4xl text-2xl font-bold m-10 px-5 flex items-center gap-2 md:justify-center"
+        class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
       >
         <CodeIcon />
         Tecnologías
       </h2>
       <Tecnologias />
     </SectionContainer>
-    <SectionContainer
-      id="projects"
-      class="w-full py-20 flex flex-col items-center"
-    >
+    <SectionContainer id="projects" class="py-20 flex flex-col items-center">
       <h2
-        class="md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
+      class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
       >
         <ProjectsIco />
         Proyectos
@@ -62,7 +59,8 @@ import Tecnologias from "../components/Tecnologias.astro";
       </div>
     </SectionContainer>
     <SectionContainer id="about" class="flex items-center flex-col">
-      <h2 class="md:text-4xl text-2xl font-bold mb-5 flex items-center gap-2">
+      <h2         class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:-z-20 before:bg-cyan-700 relative md:text-4xl text-2xl font-bold md:mb-20 mb-10 px-5 flex items-center gap-2 md:justify-center"
+      >
         <AboutIcon />
         Sobre mí
       </h2>
