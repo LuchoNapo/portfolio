@@ -3,10 +3,15 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import MailIcon from "../icons/MailIcon.astro";
 import WppIcon from "../icons/WppIcon.astro";
 import CurriculumIcon from "../icons/CurriculumIcon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LenguagePicker from "./LenguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer
-  class="text-nowrap pb-20 relative bg-[#0E7490] min-h-28 w-full flex items-center flex-col mt-52"
+  class="text-nowrap pb-14 relative bg-[#0E7490] min-h-28 w-full flex items-center flex-col mt-52"
 >
   <div class="waves">
     <div class="wave" id="wave1"></div>
@@ -15,19 +20,21 @@ import CurriculumIcon from "../icons/CurriculumIcon.astro";
     <div class="wave" id="wave4"></div>
   </div>
   <div
-    class="flex gap-6 md:flex-row flex-col items-center md:items-end md:justify-around w-full"
+    class="flex gap-6 md:flex-row flex-col items-center pt-14 md:items-end md:justify-around w-full"
   >
     <h2 class="text-3xl md:text-xl lg:text-3xl font-nothing font-bold">
       Luciano Napolitano
     </h2>
+
     <a
-      class="flex items-end gap-1 font-bold text-xl md:text-xl lg:text-xl hover:text-black transition-colors duration-500 md:mr-0 mr-5"
+      class="flex items-end gap-1 font-bold text-xl md:text-xl lg:text-xl hover:text-cyan-500 transition-colors duration-500 md:mr-0 mr-5"
       target="_blank"
       href="Luciano Napolitano Curriculum.pdf"
-      ><CurriculumIcon />Descargá mi CV</a
+      ><CurriculumIcon />{t("footer.curriculum")}</a
     >
+
     <div class="flex flex-col gap-2 lg:gap-4 items-center md:mt-0">
-      <h2 id="contact" class="text-xl font-bold">Contactame!</h2>
+      <h2 id="contact" class="text-xl font-bold">{t("footer.contact")}</h2>
       <ul class="flex sm:gap-4 gap-3 items-center">
         <li>
           <a
@@ -65,6 +72,7 @@ import CurriculumIcon from "../icons/CurriculumIcon.astro";
       </ul>
     </div>
   </div>
+  <LenguagePicker />
 </footer>
 
 <style>

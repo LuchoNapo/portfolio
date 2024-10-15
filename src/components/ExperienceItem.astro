@@ -1,5 +1,6 @@
 ---
 import Badge from "./Badge.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 interface Props {
   date: string;
@@ -10,6 +11,10 @@ interface Props {
   badge?: string;
 }
 const { date, title, subtitle, description, link, badge } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 
 <li class="mb-10 ms-4 px-4">
@@ -38,7 +43,7 @@ const { date, title, subtitle, description, link, badge } = Astro.props;
         rel="noopener"
         class="inline-flex items-center py-2 md:text-lg font-medium focus:z-10 focus:ring-1 focus:outline-none focus:ring-gray-100 focus:text-cyan-600 text-cyan-200 hover:text-cyan-400 transition-all duration-300"
       >
-        Echa un vistazo{" "}
+        {t("experience.button")}
         <svg
           class="w-3 h-3 ms-2 rtl:rotate-180"
           aria-hidden="true"

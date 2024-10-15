@@ -1,11 +1,19 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LenguagePicker from "./LenguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <header>
   <nav
-    class=" flex flex-nowrap justify-center items-center gap-3 sm:gap-7 p-3 px-4 w-11/12 sm:w-auto text-sm sm:text-base fixed rounded-full mt-3 top-0 left-2/4 -translate-x-1/2 z-50 text-nowrap"
+    class="flex flex-nowrap justify-center items-center gap-3 sm:gap-7 p-3 px-4 w-11/12 sm:w-auto text-sm sm:text-base fixed rounded-full mt-3 top-0 left-2/4 -translate-x-1/2 z-50 text-nowrap"
   >
-    <a href="#experience">Experiencia</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#about">Sobre mí</a>
-    <a href="#contact">Contacto</a>
+    <a href="#experience">{t("nav.experience")}</a>
+    <a href="#projects">{t("nav.projects")}</a>
+    <a href="#about">{t("nav.about")}</a>
+    <a href="#contact">{t("nav.contact")}</a>
   </nav>
 </header>
 <style>

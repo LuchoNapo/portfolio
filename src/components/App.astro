@@ -1,0 +1,66 @@
+---
+import "@fontsource/nothing-you-could-do";
+import SectionContainer from "../components/SectionContainer.astro";
+import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
+import ExperienceIcon from "../icons/ExperienceIcon.astro";
+import Projects from "../components/Projects.astro";
+import ProjectsIcon from "../icons/ProjectsIcon.astro"; // Corrige el nombre del icono si es necesario
+import About from "../components/About.astro";
+import AboutIcon from "../icons/AboutIcon.astro";
+import CodeIcon from "../icons/CodeIcon.astro";
+import Tecnologias from "../components/Tecnologias.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<main>
+  <SectionContainer
+    class="min-h-[100vh] sm:min-h-[90vh] py-20 w-svw bg-[url('/images/hero-bg.webp')] md:bg-fixed bg-cover md:bg-bottom bg-[center_top] items-center justify-center"
+  >
+    <Hero />
+  </SectionContainer>
+
+  <SectionContainer
+    id="experience"
+    title={t("nav.experience")}
+    icon={ExperienceIcon}
+    class="md:py-10 py-8 md:w-[740px] w-full px-5"
+  >
+    <Experience />
+  </SectionContainer>
+
+  <SectionContainer
+    id="technologies"
+    title={t("technologies")}
+    icon={CodeIcon}
+    class="flex flex-col items-center"
+  >
+    <Tecnologias />
+  </SectionContainer>
+
+  <SectionContainer
+    id="projects"
+    title={t("nav.projects")}
+    icon={ProjectsIcon}
+    class="py-20 flex flex-col items-center"
+  >
+    <div
+      class="lg:grid lg:grid-cols-2 lg:justify-items-center flex flex-col items-center xs:mx-5 md:gap-10 sm:mx-20 2xl:w-[1280px]"
+    >
+      <Projects />
+    </div>
+  </SectionContainer>
+
+  <SectionContainer
+    id="about"
+    title={t("nav.about")}
+    icon={AboutIcon}
+    class="flex items-center flex-col"
+  >
+    <About />
+  </SectionContainer>
+</main>

@@ -10,6 +10,11 @@ import WordpressIcon from "../icons/WordpressIcon.astro";
 import LinkIcon from "../icons/LinkIcon.astro";
 import GitHubIcon from "../icons/GitHubIcon.astro";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const TAGS = {
   HTML: {
     name: "HTML",
@@ -56,40 +61,36 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Icaro 23",
-    description:
-      "Web desarrollada para Fabbri Desarrollos, donde se presenta el fideicomiso Ícaro 23 y todas sus caracteristicas y especificaciones. ",
+    description: t("project1.body"),
     link: "https://aenimalab.com.ar/fabbri-2024/icaro23/",
-    image: "./images/projects/Icaro23Project.webp",
+    image: "../images/projects/Icaro23Project.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScrit, TAGS.PHP],
   },
   {
-    title: "Web Institucional Fabbri",
-    description:
-      "Sitio web desarrollado para Fabbri Desarrollos, donde se exponen los diferentes proyectos inmobiliarios de la empresa. ",
+    title: t("project2.title"),
+    description: t("project2.body"),
     link: "https://aenimalab.com.ar/fabbri-2024/",
-    image: "./images/projects/FabbriProject.webp",
+    image: "../images/projects/FabbriProject.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.PHP, TAGS.JavaScrit],
   },
   {
     title: "Rick & Morty APP",
-    description:
-      "Aplicación desarrollada con la API de Rick and Morty, que permite explorar y visualizar información detallada sobre los personajes de la serie.",
+    description: t("project3.body"),
     github: "https://github.com/LuchoNapo/Rick-And-Morty-APP",
-    image: "./images/projects/RickAndMortyProject.webp",
+    image: "../images/projects/RickAndMortyProject.webp",
     tags: [TAGS.React, TAGS.Vite, TAGS.Sass, TAGS.CSS],
   },
   {
-    title: "Mantenimiento Wordpress",
-    description:
-      "Sitio web de Akapol desarrollado en WordPress, al que realizo tareas de mantenimiento para optimizar su funcionamiento y asegurar su rendimiento.",
+    title: t("project4.title"),
+    description: t("project4.body"),
     link: "https://akapol.com/",
-    image: "./images/projects/AkapolProject.webp",
+    image: "../images/projects/AkapolProject.webp",
     tags: [TAGS.Wordpress],
   },
 ];
 ---
 
-{
+<!--TODO: Refactorizar este codigo para que este más componetizado -->{
   PROJECTS.map(({ title, description, tags, image, link, github }) => (
     <article class="xs:w-full w-3/4" data-aos="zoom-in-up">
       <img
@@ -98,7 +99,9 @@ const PROJECTS = [
         alt={`Captura de pantalla del proyecto ${title}`}
       />
 
-      <h3 class="text-2xl mb-2 text-cyan-500 font-semibold sm:text-left text-center">{title}</h3>
+      <h3 class="text-2xl mb-2 text-cyan-500 font-semibold sm:text-left text-center">
+        {title}
+      </h3>
       <p class="text-md text-pretty sm:text-left text-center">{description}</p>
       <div class="flex items-center justify-between flex-col sm:flex-row">
         <ul class="flex my-4 gap-2 items-center">

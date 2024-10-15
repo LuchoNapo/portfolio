@@ -1,22 +1,24 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-import Badge from "./Badge.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const EXPERIENCE = [
   {
-    date: "2023 - Actualmente...",
+    date: t("experience.item1.time"),
     title: "AENIMA AGENCY",
-    subtitle: "Desarrollador Frontend",
-    description:
-      "Desarrollo de sitios web y aplicaciones web para diferentes clientes como tambien el mantenimiento de las mismas y la gestion de los servicios.",
+    subtitle: t("experience.item1.subtitle"),
+    description: t("experience.item1.body"),
     link: "https://aenima.agency/",
-    badge: "Now"
+    badge: "Now",
   },
   {
-    date: "2022 - Actualmente...",
+    date: t("experience.item2.time"),
     title: "FREELANCE",
-    subtitle: "Desarrollador Frontend",
-    description:
-      "Durante mis inicios en el mundo de la programación web, me dediqué a desarrollar sitios web y aplicaciones web como proyectos personales para el desarollo y aprendizaje de mis habilidades.",
+    subtitle: t("experience.item2.subtitle"),
+    description: t("experience.item2.body"),
   },
 ];
 ---

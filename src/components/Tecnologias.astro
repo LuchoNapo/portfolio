@@ -13,9 +13,15 @@ import GitIcon from "../icons/GitIcon.astro";
 import NextIcon from "../icons/NextIcon.astro";
 import TypeScriptIcon from "../icons/TypeScriptIcon.astro"
 import BootstrapIcon from "../icons/BootstrapIcon.astro"
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 ---
 <article class="w-[80vw] xl:w-[50vw] flex flex-col items-center justify-center text-pretty m-auto">
-  <h3 class="text-center w-full md:w-4/6 md:text-lg mb-4">Experiencia en el manejo de distinas tecnologías que he utilizado en mi trabajo y en mi proyectos personales y de los cuales sigo aprendiendo y mejorando constantemente.</h3>
+  <h3 class="text-center w-full md:w-4/6 md:text-lg mb-4">{t("technologies.body")}</h3>
   <div class="logos w-full m-auto flex overflow-hidden">
     <div class="logos-slide">
       <div class="slide"><HTMLIcon class="size-16 sm:size-24" />HTML</div>

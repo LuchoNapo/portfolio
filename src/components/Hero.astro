@@ -3,6 +3,10 @@ import SocialPill from "../icons/SocialPill.astro";
 import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import MailIcon from "../icons/MailIcon.astro";
 import WppIcon from "../icons/WppIcon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <img
@@ -14,7 +18,7 @@ import WppIcon from "../icons/WppIcon.astro";
   <h4
     class="welcome overflow-hidden whitespace-nowrap w-full border-r-2 text-2xl md:text-3xl font-bold"
   >
-    Hola! Soy Luciano
+    {t("welcome")} 
   </h4>
 </div>
 <h1 class="md:text-8xl text-7xl font-bold animate-fadeUp bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-500 bg-clip-text text-transparent">FrontEnd</h1>

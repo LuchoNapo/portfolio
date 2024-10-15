@@ -1,27 +1,21 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <div
   class="flex justify-center items-center md:gap-20 w-full lg:flex-row flex-col-reverse px-5"
 >
   <div
     class="flex flex-col lg:w-2/4 gap-4 md:text-lg text-md text-center lg:text-left text-balance"
   >
-    <h2 class="md:text-4xl text-3xl font-nothing">Hola a todos!</h2>
+    <h2 class="md:text-4xl text-3xl font-nothing">{t("about.grettings")}</h2>
     <p class="text-pretty">
-      Me llamo Luciano Andres Napolitano, Napo o Lucho. Empecé en el mundo de la
-      programación desde los 21 años ya que siempre fuí muy apegado a la
-      tecnología desde chico. Hoy en dia paso la mayor parte de mi dia junto a
-      una ya que soy un fanatico de los videojuegos y de ver algun que otro
-      anime.
+      {t("about.body1")}
     </p>
-    <p class="text-pretty">
-      Desde 2022 que realizo proyectos web como <span
-        class="font-nothing font-bold text-cyan-500">FREELANCER</span
-      > para desarollar mis habilidades y conocer nuevas tecnologías, me gusta trabajar
-      en proyectos que me ayuden a aprender y a desarrollar mi personalidad. En 2023
-      empecé a trabajar como <span class="font-nothing font-bold text-cyan-500"
-        >DESAROLLADOR FRONTEND PARA AENIMA💡</span
-      > donde me encuentro actualmente! Sigo aprendiendo y desarollando mis habilidades
-      todos los dias.
-    </p>
+    <p set:html={t("about.body2")} class="text-pretty" />
   </div>
   <div
     class="rounded-full md:m-0 mb-10 p-1 bg-gradient-to-r from-cyan-500 via-teal-800 to-cyan-300 shadow-[0_15px_30px_-5px_rgba(151,65,252,0.2)]"
