@@ -1,0 +1,66 @@
+---
+import GitHubIcon from "../icons/GitHubIcon.astro";
+import LinkIcon from "../icons/LinkIcon.astro";
+import Tags from "./Tags.astro";
+
+interface Project {
+  title: string;
+  description: string;
+  tags: Array<{ name: string; class: string; icon: SVGAElement }>;
+  image: string;
+  link?: string;
+  github?: string;
+}
+
+const { title, description, tags, image, link, github } =
+  Astro.props as Project;
+---
+
+<article class="xs:w-full w-3/4" data-aos="zoom-in-up">
+  <img
+    class="rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5"
+    src={image}
+    alt={`Captura de pantalla del proyecto ${title}`}
+  />
+
+  <h3
+    class="text-2xl mb-2 text-cyan-500 font-semibold sm:text-left text-center"
+  >
+    {title}
+  </h3>
+  <p class="text-md text-pretty sm:text-left text-center">{description}</p>
+
+  <div class="flex items-center justify-between flex-col sm:flex-row">
+    <ul class="flex my-4 gap-2 items-center">
+      {
+        tags.map((tag) => (
+          <Tags icon={tag.icon} name={tag.name} class={tag.class} />
+        ))
+      }
+    </ul>
+
+    {
+      github ? (
+        <a
+          href={github}
+          target="_blank"
+          rel="noopener"
+          class="sm:mb-5 cursor-pointer flex items-center gap-1 text-sm xl:text-base xl:py-2 xl:px-3 py-1 px-2 bg-slate-600/10 rounded-lg mx-8 hover:bg-slate-600 transition-color duration-300"
+        >
+          <GitHubIcon />
+          Preview
+        </a>
+      ) : (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener"
+          class="sm:mb-0 mb-5 cursor-pointer flex items-center gap-1 text-sm xl:text-base xl:py-2 xl:px-3 py-1 px-2 bg-slate-600/10 rounded-lg mx-8 hover:bg-slate-600 transition-color duration-300"
+        >
+          <LinkIcon />
+          Preview
+        </a>
+      )
+    }
+  </div>
+</article>

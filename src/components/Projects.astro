@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ProjectCard from "../components/ProjectCard.astro";
 import HTMLIcon from "../icons/HTMLIcon.astro";
 import CSSIcon from "../icons/CSSIcon.astro";
 import PHPIcon from "../icons/PHPIcon.astro";
@@ -7,54 +9,19 @@ import SassIcon from "../icons/SassIcon.astro";
 import ViteIcon from "../icons/ViteIcon.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import WordpressIcon from "../icons/WordpressIcon.astro";
-import LinkIcon from "../icons/LinkIcon.astro";
-import GitHubIcon from "../icons/GitHubIcon.astro";
-
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const TAGS = {
-  HTML: {
-    name: "HTML",
-    class: "bg-orange-500 text-white",
-    icon: HTMLIcon,
-  },
-  CSS: {
-    name: "CSS",
-    class: "bg-blue-500 text-white",
-    icon: CSSIcon,
-  },
-  JavaScrit: {
-    name: "JavaScript",
-    class: "bg-yellow-500 text-white",
-    icon: JavaScriptIcon,
-  },
-  PHP: {
-    name: "PHP",
-    class: "bg-violet-500 text-white",
-    icon: PHPIcon,
-  },
-  Sass: {
-    name: "Sass",
-    class: "bg-pink-300 text-white",
-    icon: SassIcon,
-  },
-  Vite: {
-    name: "Vite",
-    class: "bg-violet-600 text-white",
-    icon: ViteIcon,
-  },
-  React: {
-    name: "React",
-    class: "bg-cyan-700 text-white",
-    icon: ReactIcon,
-  },
-  Wordpress: {
-    name: "Wordpress",
-    class: "bg-cyan-500 text-white",
-    icon: WordpressIcon,
+  HTML: { name: "HTML", class: "bg-orange-500 text-white", icon: HTMLIcon },
+  CSS: { name: "CSS", class: "bg-blue-500 text-white", icon: CSSIcon },
+  JavaScrit: { name: "JavaScript", class: "bg-yellow-500 text-white", icon: JavaScriptIcon},
+  PHP: { name: "PHP", class: "bg-violet-500 text-white", icon: PHPIcon },
+  Sass: { name: "Sass", class: "bg-pink-300 text-white", icon: SassIcon },
+  Vite: { name: "Vite", class: "bg-violet-600 text-white", icon: ViteIcon },
+  React: { name: "React", class: "bg-cyan-700 text-white", icon: ReactIcon },
+  Wordpress: { name: "Wordpress", class: "bg-cyan-500 text-white", icon: WordpressIcon,
   },
 };
 
@@ -90,54 +57,6 @@ const PROJECTS = [
 ];
 ---
 
-<!--TODO: Refactorizar este codigo para que este más componetizado -->{
-  PROJECTS.map(({ title, description, tags, image, link, github }) => (
-    <article class="xs:w-full w-3/4" data-aos="zoom-in-up">
-      <img
-        class="rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${title}`}
-      />
 
-      <h3 class="text-2xl mb-2 text-cyan-500 font-semibold sm:text-left text-center">
-        {title}
-      </h3>
-      <p class="text-md text-pretty sm:text-left text-center">{description}</p>
-      <div class="flex items-center justify-between flex-col sm:flex-row">
-        <ul class="flex my-4 gap-2 items-center">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`${tag.class} flex items-center justify-center py-1 px-2 rounded-full gap-x-2 text-xs dark:shadow-white/100`}
-              >
-                <tag.icon class="size-5" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        {github ? (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener"
-            class="sm:mb-5 cursor-pointer flex items-center gap-1 text-sm xl:text-base xl:py-2 xl:px-3 py-1 px-2 bg-slate-600/10 rounded-lg mx-8 hover:bg-slate-600 transition-color duration-300"
-          >
-            <GitHubIcon />
-            Preview
-          </a>
-        ) : (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener"
-            class="sm:mb-0 mb-5 cursor-pointer flex items-center gap-1 text-sm xl:text-base xl:py-2 xl:px-3 py-1 px-2 bg-slate-600/10 rounded-lg mx-8 hover:bg-slate-600 transition-color duration-300"
-          >
-            <LinkIcon />
-            Preview
-          </a>
-        )}
-      </div>
-    </article>
-  ))
-}
+  {PROJECTS.map((project) => <ProjectCard {...project} />)}
+
