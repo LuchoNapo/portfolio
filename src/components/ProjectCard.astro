@@ -16,22 +16,21 @@ const { title, description, tags, image, link, github } =
   Astro.props as Project;
 ---
 
-<article class="xs:w-full w-3/4" data-aos="zoom-in-up">
+<article class="xs:w-full w-3/4 card" data-aos="zoom-in-up">
+  <h3 class="text-2xl text-cyan-500 font-semibold sm:text-center text-center">
+    {title}
+  </h3>
   <img
-    class="rounded-xl shadow-xl shadow-black/5 dark:shadow-white/5"
+    class="rounded-xl w-full"
     src={image}
     alt={`Captura de pantalla del proyecto ${title}`}
   />
-
-  <h3
-    class="text-2xl mb-2 text-cyan-500 font-semibold sm:text-left text-center"
-  >
-    {title}
-  </h3>
-  <p class="text-md text-pretty sm:text-left text-center">{description}</p>
+  <p class="text-md mb-2 text-pretty sm:text-left text-center">{description}</p>
 
   <div class="flex items-center justify-between flex-col sm:flex-row">
-    <ul class="flex my-4 gap-2 items-center">
+    <ul
+      class="flex my-4 gap-2 md:flex-nowrap flex-wrap justify-center items-center"
+    >
       {
         tags.map((tag) => (
           <Tags icon={tag.icon} name={tag.name} class={tag.class} />
@@ -64,3 +63,11 @@ const { title, description, tags, image, link, github } =
     }
   </div>
 </article>
+
+<style>
+  .card:last-child{
+    grid-column: 1 / -1;
+    @apply md:w-2/4 w-full;
+  }
+  
+</style>

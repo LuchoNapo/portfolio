@@ -15,6 +15,7 @@ import TypeScriptIcon from "../icons/TypeScriptIcon.astro"
 import BootstrapIcon from "../icons/BootstrapIcon.astro"
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import StrapiIcon from "../icons/StrapiIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,35 +25,35 @@ const t = useTranslations(lang);
   <h3 class="text-center w-full md:w-4/6 md:text-lg mb-4">{t("technologies.body")}</h3>
   <div class="logos w-full m-auto flex overflow-hidden">
     <div class="logos-slide">
-      <div class="slide"><HTMLIcon class="size-16 sm:size-24" />HTML</div>
-      <div class="slide"><CSSIcon class="size-16 sm:size-24" />CSS</div>
+      <div class="slide"><NextIcon class="size-16 sm:size-24" />Next</div>
+      <div class="slide"><ReactIcon class="size-16 sm:size-24" />React</div>
       <div class="slide"><JavaScriptIcon class="size-16 sm:size-24" />JavaScript</div>
       <div class="slide"><TypeScriptIcon class="size-16 sm:size-24"/>TypeScript</div>
+      <div class="slide"><PHPIcon class="size-16 sm:size-24" />PHP</div>
       <div class="slide"><TailwindIcon class="size-16 sm:size-24" />Tailwind</div>
       <div class="slide"><BootstrapIcon class="size-16 sm:size-24"/>Bootstrap</div>
-      <div class="slide"><ReactIcon class="size-16 sm:size-24" />React</div>
-      <div class="slide"><PHPIcon class="size-16 sm:size-24" />PHP</div>
       <div class="slide"><ViteIcon class="size-16 sm:size-24" />Vite</div>
       <div class="slide"><WordpressIcon class="size-16 sm:size-24" />Wordpress</div>
       <div class="slide"><AstroIcon class="size-16 sm:size-24" />Astro</div>
       <div class="slide"><GitHubIcon class="size-16 sm:size-24" />GitHub</div>
       <div class="slide"><GitIcon class="size-16 sm:size-24" />Git</div>
+      <div class="slide"><StrapiIcon class="size-16 sm:size-24" />Strapi</div>
+
+
       <div class="slide"><NextIcon class="size-16 sm:size-24" />Next</div>
-  
-      <div class="slide"><HTMLIcon class="size-16 sm:size-24" />HTML</div>
-      <div class="slide"><CSSIcon class="size-16 sm:size-24" />CSS</div>
+      <div class="slide"><ReactIcon class="size-16 sm:size-24" />React</div>
       <div class="slide"><JavaScriptIcon class="size-16 sm:size-24" />JavaScript</div>
       <div class="slide"><TypeScriptIcon class="size-16 sm:size-24"/>TypeScript</div>
+      <div class="slide"><PHPIcon class="size-16 sm:size-24" />PHP</div>
       <div class="slide"><TailwindIcon class="size-16 sm:size-24" />Tailwind</div>
       <div class="slide"><BootstrapIcon class="size-16 sm:size-24"/>Bootstrap</div>
-      <div class="slide"><ReactIcon class="size-16 sm:size-24" />React</div>
-      <div class="slide"><PHPIcon class="size-16 sm:size-24" />PHP</div>
       <div class="slide"><ViteIcon class="size-16 sm:size-24" />Vite</div>
       <div class="slide"><WordpressIcon class="size-16 sm:size-24" />Wordpress</div>
       <div class="slide"><AstroIcon class="size-16 sm:size-24" />Astro</div>
       <div class="slide"><GitHubIcon class="size-16 sm:size-24" />GitHub</div>
       <div class="slide"><GitIcon class="size-16 sm:size-24" />Git</div>
-      <div class="slide"><NextIcon class="size-16 sm:size-24" />Next</div>
+      <div class="slide"><StrapiIcon class="size-16 sm:size-24" />Strapi</div>
+
     </div>
   </div>
 </article>

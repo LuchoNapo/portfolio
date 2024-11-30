@@ -9,6 +9,11 @@ import SassIcon from "../icons/SassIcon.astro";
 import ViteIcon from "../icons/ViteIcon.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import WordpressIcon from "../icons/WordpressIcon.astro";
+import StripeIcon from "../icons/StripeIcon.astro";
+import StrapiIcon from "../icons/StrapiIcon.astro";
+import NextIcon from "../icons/NextIcon.astro";
+import TypeScriptIcon from "../icons/TypeScriptIcon.astro";
+import TailwindIcon from "../icons/TailwindIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,12 +21,40 @@ const t = useTranslations(lang);
 const TAGS = {
   HTML: { name: "HTML", class: "bg-orange-500 text-white", icon: HTMLIcon },
   CSS: { name: "CSS", class: "bg-blue-500 text-white", icon: CSSIcon },
-  JavaScrit: { name: "JavaScript", class: "bg-yellow-500 text-white", icon: JavaScriptIcon},
+  JavaScrit: {
+    name: "JavaScript",
+    class: "bg-yellow-500 text-white",
+    icon: JavaScriptIcon,
+  },
   PHP: { name: "PHP", class: "bg-violet-500 text-white", icon: PHPIcon },
   Sass: { name: "Sass", class: "bg-pink-300 text-white", icon: SassIcon },
   Vite: { name: "Vite", class: "bg-violet-600 text-white", icon: ViteIcon },
   React: { name: "React", class: "bg-cyan-700 text-white", icon: ReactIcon },
-  Wordpress: { name: "Wordpress", class: "bg-cyan-500 text-white", icon: WordpressIcon,
+  Wordpress: {
+    name: "Wordpress",
+    class: "bg-cyan-500 text-white",
+    icon: WordpressIcon,
+  },
+  Stripe: {
+    name: "Stripe",
+    class: "bg-indigo-200 text-black",
+    icon: StripeIcon,
+  },
+  Strapi: {
+    name: "Strapi",
+    class: "bg-[#4945FF] text-white",
+    icon: StrapiIcon,
+  },
+  Next: { name: "Next", class: "bg-neutral-950 text-white", icon: NextIcon },
+  Typescrip: {
+    name: "TypeScript",
+    class: "bg-blue-500 text-white",
+    icon: TypeScriptIcon,
+  },
+  Tailwind: {
+    name: "Tailwind",
+    class: "bg-sky-600 text-white",
+    icon: TailwindIcon,
   },
 };
 
@@ -31,7 +64,7 @@ const PROJECTS = [
     description: t("project1.body"),
     link: "https://aenimalab.com.ar/fabbri-2024/icaro23/",
     image: "../images/projects/Icaro23Project.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScrit, TAGS.PHP],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.PHP, TAGS.JavaScrit],
   },
   {
     title: t("project2.title"),
@@ -54,9 +87,15 @@ const PROJECTS = [
     image: "../images/projects/AkapolProject.webp",
     tags: [TAGS.Wordpress],
   },
+  {
+    title: "Mateina E-Commerce",
+    description: t("project5.body"),
+    link: "https://ecommerce-yerba-mate.vercel.app/",
+    image: "../images/projects/MateinaProject.webp",
+    tags: [TAGS.Next, TAGS.Typescrip, TAGS.Tailwind, TAGS.Stripe, TAGS.Strapi],
+  },
 ];
 ---
 
-
-  {PROJECTS.map((project) => <ProjectCard {...project} />)}
+{PROJECTS.map((project) => <ProjectCard {...project} />)}
 
