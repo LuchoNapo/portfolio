@@ -8,6 +8,8 @@ import LenguagePicker from "./LenguagePicker.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const curriculumPDF = lang === "es" ? "/Curriculum Luciano 2025.pdf" : "/Curriculum Luciano 2025 EN.pdf";
 ---
 
 <footer
@@ -29,7 +31,7 @@ const t = useTranslations(lang);
     <a
       class="flex items-end gap-1 font-bold text-xl md:text-xl lg:text-xl hover:text-cyan-500 transition-colors duration-500 md:mr-0 mr-5"
       target="_blank"
-      href="Luciano Napolitano Curriculum.pdf"
+      href={curriculumPDF}
       ><CurriculumIcon />{t("footer.curriculum")}</a
     >
 
